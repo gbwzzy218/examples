@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "content_version": "topic-b-20260519074829",
+      "headline": "Kubernetes AI Operations: managed-agent demo update",
+      "published_at": "2026-05-19T07:48:29Z",
+      "source": "hosted-deployment-news-runtime",
+      "topic_id": "topic-b",
+      "topic_label": "Kubernetes AI Operations",
+      "workflow_id": "github-external-source-v1"
+    }
+  ]
+}

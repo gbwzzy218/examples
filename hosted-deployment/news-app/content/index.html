@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Managed Agent News Pulse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Managed Agent News Pulse</p>
+        <h1 id="topic">Loading topic...</h1>
+      </div>
+      <div class="meta">
+        <span id="version">version pending</span>
+        <span id="workflow">workflow pending</span>
+      </div>
+    </header>
+    <section id="cards" class="cards"></section>
+    <footer>
+      <span>Updated by Managed Agent</span>
+      <span id="updated">updated_at pending</span>
+    </footer>
+  </main>
+  <script>
+    async function loadNews() {
+      const response = await fetch("news.json", { cache: "no-store" });
+      const news = await response.json();
+      document.getElementById("topic").textContent = news.topic_label;
+      document.getElementById("version").textContent = news.content_version;
+      document.getElementById("workflow").textContent = news.workflow_id;
+      document.getElementById("updated").textContent = news.updated_at;
+      const cards = document.getElementById("cards");
+      cards.innerHTML = "";
+      for (const item of news.cards) {
+        const article = document.createElement("article");
+        article.className = "card";
+        article.innerHTML = `
+          <h2>${escapeHtml(item.headline)}</h2>
+          <p>${escapeHtml(item.summary)}</p>
+          <dl>
+            <dt>Source</dt><dd>${escapeHtml(item.source)}</dd>
+            <dt>Published</dt><dd>${escapeHtml(item.published_at)}</dd>
+            <dt>Why it matters</dt><dd>${escapeHtml(item.why_it_matters)}</dd>
+          </dl>`;
+        cards.appendChild(article);
+      }
+    }
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[c]));
+    }
+    loadNews().catch((error) => {
+      document.getElementById("topic").textContent = "Failed to load news";
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

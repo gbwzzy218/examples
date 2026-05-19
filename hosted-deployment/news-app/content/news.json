@@ -1,0 +1,38 @@
+{
+  "cards": [
+    {
+      "confidence": "medium",
+      "headline": "Kubernetes AI Operations: managed-agent demo update",
+      "published_at": "2026-05-19",
+      "source": "Managed Agent demo topic rotation",
+      "summary": "The scheduled Managed Agent workflow selected this topic and prepared a browser-visible app update.",
+      "why_it_matters": "It proves that a scheduled workflow can move from topic selection to reviewed app content."
+    },
+    {
+      "confidence": "medium",
+      "headline": "Kubernetes AI Operations: sandbox artifact ready",
+      "published_at": "2026-05-19",
+      "source": "SessionSandbox proof artifact",
+      "summary": "The app content is represented as a patch artifact that the runner can validate before deployment.",
+      "why_it_matters": "Codex can work in a sandbox while the platform retains deploy control."
+    },
+    {
+      "confidence": "high",
+      "headline": "Kubernetes AI Operations: runner-controlled deploy",
+      "published_at": "2026-05-19",
+      "source": "Managed Agent demo runner",
+      "summary": "The deploy step is outside the Codex sandbox and records a separate smoke result.",
+      "why_it_matters": "It separates code generation from privileged Kubernetes mutation."
+    }
+  ],
+  "content_version": "topic-b-20260519074829",
+  "provenance": {
+    "codex_run_id": "hosted-runtime-seed",
+    "runner_id": "hosted-deployment-news-runtime"
+  },
+  "search_query": "latest Kubernetes AI operations and agent automation news",
+  "topic_id": "topic-b",
+  "topic_label": "Kubernetes AI Operations",
+  "updated_at": "2026-05-19T07:48:29Z",
+  "workflow_id": "github-external-source-v1"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "steps": [
+    {
+      "adapter": "hosted-deployment-news-runtime",
+      "artifact": "news.json",
+      "name": "Hosted Deployment - Serve News App",
+      "status": "completed"
+    }
+  ],
+  "updated_at": "2026-05-19T07:48:29Z",
+  "workflow_id": "github-external-source-v1"
+}
